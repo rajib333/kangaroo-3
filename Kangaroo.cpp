@@ -340,7 +340,7 @@ void Kangaroo::SolveKeyCPU(TH_PARAM *ph) {
   int thId = ph->threadId;
 
   // Create Kangaroos
-  ph->nbKangaroo = CPU_GRP_SIZE*4;
+  ph->nbKangaroo = CPU_GRP_SIZE * 4;
 
 #ifdef USE_SYMMETRY
   ph->symClass = new uint64_t[CPU_GRP_SIZE];
