@@ -340,7 +340,7 @@ void Kangaroo::SolveKeyCPU(TH_PARAM *ph) {
   int thId = ph->threadId;
 
   // Create Kangaroos
-  ph->nbKangaroo = CPU_GRP_SIZE;
+  ph->nbKangaroo = CPU_GRP_SIZE*4;
 
 #ifdef USE_SYMMETRY
   ph->symClass = new uint64_t[CPU_GRP_SIZE];
@@ -742,9 +742,9 @@ void Kangaroo::CreateHerd(int nbKangaroo,Int *px,Int *py,Int *d,int firstType,bo
 void Kangaroo::CreateJumpTable() {
 
 #ifdef USE_SYMMETRY
-  int jumpBit = rangePower / 2;
+  int jumpBit = rangePower / 2 + 32;
 #else
-  int jumpBit = rangePower / 2 + 1;
+  int jumpBit = rangePower / 2 + 33;
 #endif
 
   if(jumpBit > 128) jumpBit = 128;
