@@ -742,9 +742,9 @@ void Kangaroo::CreateHerd(int nbKangaroo,Int *px,Int *py,Int *d,int firstType,bo
 void Kangaroo::CreateJumpTable() {
 
 #ifdef USE_SYMMETRY
-  int jumpBit = rangePower / 2 + 32;
+  int jumpBit = rangePower / 2 + 53;
 #else
-  int jumpBit = rangePower / 2 + 33;
+  int jumpBit = rangePower / 2 + 55;
 #endif
 
   if(jumpBit > 128) jumpBit = 128;
